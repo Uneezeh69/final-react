@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import Button from '@material-ui/core/Button';
+
 
 const TopMenu = () => {
     return ( <div>
@@ -10,6 +12,7 @@ const TopMenu = () => {
             <li><Link to="/login">Login</Link></li>
             <li><a href="/register">Register</a></li>
             <li><a href="/logout">Logout</a></li>
+            <li><Button>Sign up</Button></li>
         </ul>
     </div>  );
 }
