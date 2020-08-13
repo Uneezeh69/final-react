@@ -9,8 +9,8 @@ import NotFound from './components/NotFound';
 function App() {
   return (
   <Router>
-    <div>
     <TopMenu />
+    <div style ={{padding :"100px"}}>
       <Switch>
        <Route path="/products" component = {Products}/>
        <Route path="/aboutus" component = {AboutUs}/>      
