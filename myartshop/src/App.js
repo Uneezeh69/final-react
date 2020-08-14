@@ -5,6 +5,7 @@ import LandingPage from "./components/LandingPage";
 import Products from './components/products/Products';
 import AboutUs from "./components/AboutUs";
 import NotFound from './components/NotFound';
+import NewProduct from './components/products/NewProduct';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
     <TopMenu />
     <div style ={{padding :"100px"}}>
       <Switch>
+      <Route path="/products/new" component = {NewProduct}/>
        <Route path="/products" component = {Products}/>
        <Route path="/aboutus" component = {AboutUs}/>      
        <Route path="/notfound" component ={NotFound}/>
