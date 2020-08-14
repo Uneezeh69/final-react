@@ -48,7 +48,7 @@ const Products = (props) => {
       ) : (
         <Grid container spacing={3}>
           {products.map((product, index) => (
-            <SingleProduct key={index} product={product} />
+            <SingleProduct key={index} product={product} onDelete = {getData} />
           ))}
         </Grid>
       )}

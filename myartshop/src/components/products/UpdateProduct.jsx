@@ -4,14 +4,23 @@ import axios from "axios";
 import productService from '../../services/ProductService';
 
 
-const NewProduct = (props) => {
+const UpdateProduct = (props) => {
     const [name, setName] = React.useState("");
     const [price, setPrice] = React.useState(0);
     const [quantity, setQuantity] = React.useState(0);  
+    const id = props.match.params.id;
+    React.useEffect(() => {
+        productService.getSingleProduct(id).then((data) => {
+            setName(data.name);
+            setPrice(data.price);
+            setQuantity(data.quantity);
+        });
+    }, []);
+
     return (  
     <Grid container spacing={3}>
     <Grid item xs={12}>
-      <h1>Add New Product</h1>
+      <h1>Update Product</h1>
     </Grid>
     <Grid item xs={3}></Grid>
     <Grid item xs={6}>
@@ -49,7 +58,7 @@ const NewProduct = (props) => {
         onClick = {e => {
             //console.log("UU");
                 productService
-                .addProduct({name, price, quantity})
+                .updateProduct(id, {name, price, quantity})
                 .then((data) => {
                   console.log(data);
                   props.history.push("/products");         
@@ -58,7 +67,7 @@ const NewProduct = (props) => {
             });
         }}
       >
-        Add New
+        Update
       </Button>
     </Grid>
   </Grid>
@@ -67,4 +76,4 @@ const NewProduct = (props) => {
  
 
 
-export default NewProduct;
+export default UpdateProduct;
