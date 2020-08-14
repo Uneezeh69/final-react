@@ -3,7 +3,7 @@ import { Grid, TextField, Button } from '@material-ui/core';
 import axios from "axios";
 
 
-const NewProduct = () => {
+const NewProduct = (props) => {
     const [name, setName] = React.useState("");
     const [price, setPrice] = React.useState(0);
     const [quantity, setQuantity] = React.useState(0);  
@@ -49,6 +49,7 @@ const NewProduct = () => {
             console.log("UU");
             axios.post("http://localhost:4000/api/products", {name, price, quantity}).then(res => {
                 console.log(res.data);
+                props.history.push("/products");
             }).catch(err => {
                 console.log(err);
             });
