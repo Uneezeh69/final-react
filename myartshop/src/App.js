@@ -7,6 +7,8 @@ import AboutUs from "./components/AboutUs";
 import NotFound from './components/NotFound';
 import NewProduct from './components/products/NewProduct';
 import UpdateProduct from './components/products/UpdateProduct';
+import Login from './components/auth/Login';
+import SignUp from './components/auth/SignUp';
 
 function App() {
   return (
@@ -14,8 +16,10 @@ function App() {
     <TopMenu />
     <div style ={{padding :"100px"}}>
       <Switch>
-      <Route path="/products/new" component = {NewProduct}/>
-      <Route path="/products/update/:id" component = {UpdateProduct}/>
+      <Route path="/login" component = {Login}/>
+      <Route path="/signup" component = {SignUp}/>
+       <Route path="/products/new" component = {NewProduct}/>
+       <Route path="/products/update/:id" component = {UpdateProduct}/>
        <Route path="/products" component = {Products}/>
        <Route path="/aboutus" component = {AboutUs}/>      
        <Route path="/notfound" component ={NotFound}/>

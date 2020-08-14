@@ -36,6 +36,10 @@ const TopMenu = () => {
                     <Link to="/login" className = {classes.linkP}>Login</Link>
                 </Typography>
 
+                <Typography variant="h7">
+                    <Link to="/signup" className = {classes.linkP}>Sign Up</Link>
+                </Typography>
+
 
             </Toolbar>
         </AppBar>
