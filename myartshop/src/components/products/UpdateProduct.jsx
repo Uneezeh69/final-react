@@ -2,6 +2,8 @@ import React from 'react';
 import { Grid, TextField, Button } from '@material-ui/core';
 import axios from "axios";
 import productService from '../../services/ProductService';
+import Auth from '../auth/Auth';
+import Admin from '../auth/Admin';
 
 
 const UpdateProduct = (props) => {
@@ -18,6 +20,7 @@ const UpdateProduct = (props) => {
     }, []);
 
     return (  
+      <Admin>
     <Grid container spacing={3}>
     <Grid item xs={12}>
       <h1>Update Product</h1>
@@ -71,6 +74,7 @@ const UpdateProduct = (props) => {
       </Button>
     </Grid>
   </Grid>
+  </Admin>
     );
 }
  
