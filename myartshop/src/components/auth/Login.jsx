@@ -17,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Login = (props) => {
     const classes = useStyles();
-    const [email, setEmail] = React.useState("uni@uni.com");
-    const [password, setPassword]  = React.useState("uni");
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword]  = React.useState("");
     return ( <div className={classes.container}>
         <div className = {classes.child}>
             <TextField label="email" fullWidth value={email} onChange={(e) => {

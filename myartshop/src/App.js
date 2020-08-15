@@ -15,6 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
   <Router>
+    <ToastContainer/>
     <TopMenu />
     <div style ={{padding :"100px"}}>
       <Switch>

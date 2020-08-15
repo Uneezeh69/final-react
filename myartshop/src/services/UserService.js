@@ -1,4 +1,5 @@
 import GenericService from "./GenericService";
+import jwtDecode from 'jwt-decode';
 class UserService extends GenericService{
     constructor(){
         super();
@@ -20,6 +21,22 @@ class UserService extends GenericService{
     };
     isLoggedIn = () => {
         return localStorage.getItem("token") ? true : false;
+    };
+
+    getloggedInUser = () => {
+        try{
+            const jwt = localStorage.getItem("token");
+            return jwtDecode(jwt);
+         } catch(ex){
+            return null;
+        }
+    };
+
+    isAdmin = () => {
+       if(this.isLoggedIn()){
+           if(this.getloggedInUser().role == 'admin') return true;
+           else return false;
+       }else return false;
     };
 }
 

@@ -48,7 +48,8 @@ const TopMenu = () => {
                     userService.logout();
                     window.location.reload();
                 }}
-                >Logout</Button>
+                >Logout {userService.getloggedInUser().name }
+                </Button>
                  }
                     
             </Toolbar>

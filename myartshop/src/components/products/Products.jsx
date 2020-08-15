@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
 import productService from "../../services/ProductService";
+import userService from "../../services/UserService";
 const useStyles = makeStyles((theme) => ({
   addBtn: {
     position: "absolute",
@@ -37,12 +38,14 @@ const Products = (props) => {
   return (
     <div>
       <h1>Products</h1>
+      {userService.isLoggedIn() && 
       <Fab color="primary"
        aria-label="add" 
        className={classes.addBtn}
         onClick = {handleNewProductClick}>
         <AddIcon />
       </Fab>
+      }
       {products.length == 0 ? (
         <p>There are no products</p>
       ) : (
