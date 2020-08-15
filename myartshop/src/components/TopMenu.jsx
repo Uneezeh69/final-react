@@ -41,7 +41,14 @@ const TopMenu = () => {
                     <Link to="/signup" className = {classes.linkP}>Sign Up</Link>
                 </Typography>
                 </> : 
-                <Button>Logout</Button>
+                <Button 
+                variant="contained"
+                color="pink"
+                onClick = { (e) => {
+                    userService.logout();
+                    window.location.reload();
+                }}
+                >Logout</Button>
                  }
                     
             </Toolbar>

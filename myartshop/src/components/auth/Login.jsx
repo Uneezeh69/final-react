@@ -38,6 +38,7 @@ const Login = (props) => {
                 .login(email, password)
                 .then((data) => {
                     console.log(data);
+                    window.location.href = "/";
                 })
                 .catch((err) => {
                     console.log(err);
