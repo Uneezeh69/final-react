@@ -3,19 +3,23 @@ class UserService extends GenericService{
     constructor(){
         super();
     }
-    login = (email, password) => new Promise((resolve, reject) => {
-        this.post("users/login", {username, email} ).then(token => {
+    login = (email, password) =>
+     new Promise((resolve, reject) => {
+        this.post("users/login", { email, password} ).then(token => {
             localStorage.setItem("token", token);
-            resolve();
+            resolve(token);
         })
         .catch((err) => {
             reject(err);
         });
     });
      
-    register = (name, email, dob, password) => this.post("users/signup", {username, email, name, dob} )
+    register = (name, email, dob, password) => this.post("users/signup", {name, email, dob, password} )
     logout = () => {
-        localStorage.setItem("token", "");
+        localStorage.removeItem("token");
+    };
+    isLoggedIn = () => {
+        return localStorage.getItem("token") ? true : false;
     };
 }
 

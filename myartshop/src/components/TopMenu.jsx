@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import userService from "../services/UserService";
 
 const useStyles = makeStyles((theme) => ({
    linkH: {
@@ -31,7 +32,7 @@ const TopMenu = () => {
                 <Typography variant="h5">
                     <Link to="/aboutus" className = {classes.linkP}>About Us!</Link>
                 </Typography>
-
+                {!userService.isLoggedIn()? <>
                 <Typography variant="h7">
                     <Link to="/login" className = {classes.linkP}>Login</Link>
                 </Typography>
@@ -39,8 +40,10 @@ const TopMenu = () => {
                 <Typography variant="h7">
                     <Link to="/signup" className = {classes.linkP}>Sign Up</Link>
                 </Typography>
-
-
+                </> : 
+                <Button>Logout</Button>
+                 }
+                    
             </Toolbar>
         </AppBar>
       );

@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { TextField, Button } from '@material-ui/core';
+import userService from '../../services/UserService';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -22,10 +23,27 @@ const Login = (props) => {
         <div className = {classes.child}>
             <TextField label="email" fullWidth value={email} onChange={(e) => {
                 setEmail(e.target.value);
-            }}></TextField> <br/>
+            }}/>
+            
+             <br/>
+
             <TextField label="password" type="password" fullWidth value={password} onChange={(e) => {
-                setPassword(e.target.value);></TextField> <br/>
-            <Button variant="contained" color="secondary">Login !</Button>
+                setPassword(e.target.value);
+                }}/> <br/>
+            <Button 
+            variant="contained" 
+            color="secondary"
+            onClick={(e) => {
+                userService
+                .login(email, password)
+                .then((data) => {
+                    console.log(data);
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+            }}
+            >Login !</Button>
         </div>
     </div> );
 }
