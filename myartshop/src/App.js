@@ -17,7 +17,7 @@ function App() {
   <Router>
     <ToastContainer/>
     <TopMenu />
-    <div style ={{padding :"100px"}}>
+    <div style ={{padding :"30px"}}>
       <Switch>
       <Route path="/login" component = {Login}/>
       <Route path="/signup" component = {SignUp}/>

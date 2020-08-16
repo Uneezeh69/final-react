@@ -19,10 +19,10 @@ const useStyles = makeStyles((theme) => ({
 
 const SignUp = (props) => {
     const classes = useStyles();
-    const [email, setEmail] = React.useState("ram@ram.com");
-    const [password, setPassword]  = React.useState("ram");
-    const [name, setName]  = React.useState("ram");
-    const [dob, setDOB]  = React.useState("11-11-11");
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword]  = React.useState("");
+    const [name, setName]  = React.useState("");
+    const [dob, setDOB]  = React.useState("");
     return ( <div className={classes.container}>
         <div className = {classes.child}>
             <TextField label="name" fullWidth value={name} onChange = {(e) => {setName(e.target.value)}}></TextField> <br/>

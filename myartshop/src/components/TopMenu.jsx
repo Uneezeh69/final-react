@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 const TopMenu = () => {
     const classes = useStyles();
     return ( 
-        <AppBar style={{ background: '#fc8eac' }} position= "sticky">
+        <AppBar style={{ background: '#FFFF66' }} position= "sticky">
             <Toolbar>
                 <Box display='flex' flexGrow={1}>
                 <Typography variant="h5">
