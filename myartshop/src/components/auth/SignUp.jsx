@@ -30,7 +30,9 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "20px",
         marginLeft: "-20px",
     },
-   
+    fields:{
+        padding: "2em",
+      },
    }));
 
 const SignUp = (props) => {
@@ -43,10 +45,10 @@ const SignUp = (props) => {
                 <h1 className={classes.h4}>Sign Up if you are not already registered. <br/>Note: Only admin can change <br/> product status.</h1>
 
         <div className = {classes.child}>
-            <TextField label="name" fullWidth value={name} onChange = {(e) => {setName(e.target.value)}}></TextField> <br/>
-            <TextField label="email" fullWidth value={email} onChange = {(e) => {setEmail(e.target.value)}}></TextField> <br/>
-            <TextField  type="date" fullWidth value={dob} onChange = {(e) => {setDOB(e.target.value)}}></TextField> <br/>
-            <TextField label="password" type="password" fullWidth value={password} onChange = {(e) => {setPassword(e.target.value)}}></TextField> <br/>
+            <TextField className={classes.fields} label="name" fullWidth value={name} onChange = {(e) => {setName(e.target.value)}}></TextField> <br/>
+            <TextField className={classes.fields} label="email" fullWidth value={email} onChange = {(e) => {setEmail(e.target.value)}}></TextField> <br/>
+            <TextField className={classes.fields} type="date" fullWidth value={dob} onChange = {(e) => {setDOB(e.target.value)}}></TextField> <br/>
+            <TextField className={classes.fields} label="password" type="password" fullWidth value={password} onChange = {(e) => {setPassword(e.target.value)}}></TextField> <br/>
             <Button 
             className={classes.addBtn}
             variant="contained"

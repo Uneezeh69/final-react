@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "20px",
         marginLeft: "-20px",
     },
+    fields:{
+        padding: "2em",
+      },
    }));
 
 const Login = (props) => {
@@ -39,13 +42,17 @@ const Login = (props) => {
         <h1 className={classes.h4}>Login To add Products. <br/>(Only admin can change <br/> their status)</h1>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div className = {classes.child}>
-            <TextField label="email" fullWidth value={email} onChange={(e) => {
+            <TextField 
+            className={classes.fields}
+            label="email" fullWidth value={email} onChange={(e) => {
                 setEmail(e.target.value);
             }}/>
             
              <br/>
 
-            <TextField label="password" type="password" fullWidth value={password} onChange={(e) => {
+            <TextField 
+            className={classes.fields}
+            label="password" type="password" fullWidth value={password} onChange={(e) => {
                 setPassword(e.target.value);
                 }}/> <br/>
             <Button 

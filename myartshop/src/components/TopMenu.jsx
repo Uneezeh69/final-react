@@ -75,6 +75,7 @@ const TopMenu = () => {
                 </LightTooltip>
 
                 </> : 
+                <LightTooltip title="Log Out ">
                 <Button 
                 variant="contained"
                 className= {classes.addBtn}
@@ -85,6 +86,7 @@ const TopMenu = () => {
                 > {userService.getloggedInUser().name } &nbsp; &nbsp;
                 <img src="https://img.icons8.com/metro/26/000000/logout-rounded-left.png"/>
                 </Button>
+                </LightTooltip>
                  }
                     
             </Toolbar>

@@ -47,8 +47,7 @@ h3:{
   fontSize: "30px",
 },
 hr:{
-  
-  border :"5px solid orange",
+  border :" solid orange",
   
 },
 }));
