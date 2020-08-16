@@ -9,12 +9,28 @@ const useStyles = makeStyles((theme) => ({
        display: "flex",
        justifyContent : "center",
        alignItems: "center",
-       height: "300px",
+       height: "700px",
+       backgroundColor: "	#FFFF99",
+
      },
      child: {
          width: "500px",
          padding: "5em",
        },
+       addBtn: {
+        marginTop: "50px",
+        marginLeft: "225px",
+        bottom: theme.spacing(2),
+        right: theme.spacing(2),
+        backgroundColor: "#fba73f",
+      },
+      h4:{
+        fontFamily :"Satisfy, cursive",
+        textAlign: "center",
+        fontSize: "20px",
+        marginLeft: "-20px",
+    },
+   
    }));
 
 const SignUp = (props) => {
@@ -24,14 +40,17 @@ const SignUp = (props) => {
     const [name, setName]  = React.useState("");
     const [dob, setDOB]  = React.useState("");
     return ( <div className={classes.container}>
+                <h1 className={classes.h4}>Sign Up if you are not already registered. <br/>Note: Only admin can change <br/> product status.</h1>
+
         <div className = {classes.child}>
             <TextField label="name" fullWidth value={name} onChange = {(e) => {setName(e.target.value)}}></TextField> <br/>
             <TextField label="email" fullWidth value={email} onChange = {(e) => {setEmail(e.target.value)}}></TextField> <br/>
             <TextField  type="date" fullWidth value={dob} onChange = {(e) => {setDOB(e.target.value)}}></TextField> <br/>
             <TextField label="password" type="password" fullWidth value={password} onChange = {(e) => {setPassword(e.target.value)}}></TextField> <br/>
             <Button 
+            className={classes.addBtn}
             variant="contained"
-             color="secondary" 
+          
              onClick = {(e) => {
                  userService
                  .register(name, email, dob, password)

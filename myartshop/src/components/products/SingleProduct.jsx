@@ -5,12 +5,33 @@ import { withRouter } from "react-router-dom";
 import userService from "../../services/UserService";
 import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles((theme) => ({
+
+p:{
+  color : "#FC7C00",
+  fontFamily :"Satisfy, cursive",
+  textAlign: "center",
+  fontSize: "30px",
+},
+h3:{
+  fontFamily :"Satisfy, cursive",
+  textAlign: "center",
+  fontSize: "30px",
+  color:"black",
+},
+
+}));
+
 const SingleProduct = (props) => {
     const { product, onDelete, history} =props;
+    const classes = useStyles();
     console.log(props);
   return (
     <Grid item xs={4}>
-      <p>{product.name}{""}
+      
+      <p className={classes.p}>
+      <span className={classes.h3} >Item Name:</span> &nbsp; 
+        {product.name}{""}
       {userService.isAdmin() && (
       <>
       <Button 
@@ -39,8 +60,15 @@ const SingleProduct = (props) => {
       </>
       )}
        </p>
-      <p>{product.price}</p>
-      <p>{product.quantity}</p>
+      
+      <p className={classes.p}> 
+      <span className={classes.h3} >Price to Pay:</span> &nbsp; 
+       {product.price}</p>
+      
+      <p className={classes.p}> 
+      <span className={classes.h3} >Quantity Required:</span> &nbsp; 
+       {product.quantity}
+       </p>
       <hr />
     </Grid>
   );

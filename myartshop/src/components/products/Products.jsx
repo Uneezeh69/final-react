@@ -44,7 +44,7 @@ nop:{
 h3:{
   fontFamily: "Pacifico , cursive",
   textAlign: "center",
-  fontSize: "20px",
+  fontSize: "30px",
 },
 }));
 

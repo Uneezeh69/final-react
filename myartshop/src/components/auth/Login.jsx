@@ -8,18 +8,36 @@ const useStyles = makeStyles((theme) => ({
        display: "flex",
        justifyContent : "center",
        alignItems: "center",
-       height: "300px",
+       height: "700px",
+       backgroundColor: "	#FFFF99",
      },
      child: {
          width: "500px",
        },
+       addBtn: {
+        marginTop: "50px",
+        marginLeft: "225px",
+        bottom: theme.spacing(2),
+        right: theme.spacing(2),
+        backgroundColor: "#fba73f",
+      },
+      h4:{
+        fontFamily :"Satisfy, cursive",
+        textAlign: "center",
+        fontSize: "20px",
+        marginLeft: "-20px",
+    },
    }));
 
 const Login = (props) => {
     const classes = useStyles();
     const [email, setEmail] = React.useState("");
     const [password, setPassword]  = React.useState("");
-    return ( <div className={classes.container}>
+    return (
+         <div className={classes.container}>
+
+        <h1 className={classes.h4}>Login To add Products. <br/>(Only admin can change <br/> their status)</h1>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div className = {classes.child}>
             <TextField label="email" fullWidth value={email} onChange={(e) => {
                 setEmail(e.target.value);
@@ -32,7 +50,7 @@ const Login = (props) => {
                 }}/> <br/>
             <Button 
             variant="contained" 
-            color="secondary"
+            className= {classes.addBtn}
             onClick={(e) => {
                 userService
                 .login(email, password)
