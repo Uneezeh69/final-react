@@ -46,6 +46,11 @@ h3:{
   textAlign: "center",
   fontSize: "30px",
 },
+hr:{
+  
+  border :"5px solid orange",
+  
+},
 }));
 
 const Products = (props) => {
@@ -71,7 +76,10 @@ const Products = (props) => {
   return (
     <div>
       <h1 className={classes.h1}>Products</h1>
-      <h3 className={classes.h3}>These Products have been requested by other users. Click below to add your custom item request.</h3>
+      <h3 className={classes.h3}>These Products have been requested by other users.
+       Click below to add your custom item request.</h3>
+
+       <hr className={classes.hr}/>
       {userService.isLoggedIn() && 
       <LightTooltip title="Add New To List">
       <Fab

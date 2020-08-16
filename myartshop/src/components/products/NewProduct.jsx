@@ -8,11 +8,25 @@ import { toast} from 'react-toastify';
 
 const useStyles = makeStyles((theme) => ({
   
-  bg:{
+bg:{
     backgroundColor: "	#FFFF99",
     height:"500px",
 },
-
+h1:{
+  color : "#FC7C00",
+  fontFamily: "Pacifico , cursive",
+  textAlign: "center",
+  fontSize: "40px",
+},
+fields:{
+  padding: "2em",
+},
+addBtn: {
+  marginLeft: "275px",
+  bottom: theme.spacing(2),
+  right: theme.spacing(2),
+  backgroundColor: "#fba73f",
+},
 }));
 
 const NewProduct = (props) => {
@@ -23,13 +37,14 @@ const NewProduct = (props) => {
 
     return (  
       <Auth>
-    <Grid container spacing={3} className={classes.bg}>
+    <Grid container spacing={1} className={classes.bg}>
     <Grid item xs={12}>
-      <h1>Add New Product</h1>
+      <h1 className={classes.h1}>Add New Product</h1>
     </Grid>
     <Grid item xs={3}></Grid>
     <Grid item xs={6}>
       <TextField
+      className={classes.fields}
         label="name"
         fullWidth
         value={name}
@@ -38,6 +53,7 @@ const NewProduct = (props) => {
         }}
       />
       <TextField
+      className={classes.fields}
         label="price"
         fullWidth
         value={price}
@@ -46,6 +62,7 @@ const NewProduct = (props) => {
         }}
       />
        <TextField
+       className={classes.fields}
         label="quantity"
         fullWidth
         value={quantity}
@@ -59,7 +76,7 @@ const NewProduct = (props) => {
     <Grid item xs={9}>
       <Button
         variant="contained"
-        color="primary"
+        className= {classes.addBtn}
         onClick = {e => {
             //console.log("UU");
                 productService

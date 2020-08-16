@@ -24,6 +24,10 @@ hr:{
   border :"5px solid orange",
   
 },
+addBtn: {
+  fontFamily: "Pacifico , cursive",
+  backgroundColor: "#fba73f",
+},
 
 }));
 
@@ -41,15 +45,16 @@ const SingleProduct = (props) => {
       <>
       <Button 
       variant="contained"
-       color="Primary"
+      className={classes.addBtn}
        onClick={(e) => {
            history.push("/products/update/" + product._id);
        }}
-        > Edit</Button>
+        > Edit
+        </Button>
       
       <Button 
       variant="contained" 
-      color="Primary" 
+      className={classes.addBtn}
       onClick = {(e) => {
           productService
           .deleteProduct(product._id)
@@ -61,7 +66,8 @@ const SingleProduct = (props) => {
               console.log(err);
           });
       }}
-      > Delete</Button>
+      > Delete
+      </Button>
       </>
       )}
        </p>
