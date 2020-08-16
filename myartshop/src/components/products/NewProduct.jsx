@@ -3,15 +3,27 @@ import { Grid, TextField, Button } from '@material-ui/core';
 import axios from "axios";
 import productService from '../../services/ProductService';
 import Auth from '../auth/Auth';
+import { makeStyles } from "@material-ui/core/styles";
+import { toast} from 'react-toastify';
 
+const useStyles = makeStyles((theme) => ({
+  
+  bg:{
+    backgroundColor: "	#FFFF99",
+    height:"500px",
+},
+
+}));
 
 const NewProduct = (props) => {
     const [name, setName] = React.useState("");
     const [price, setPrice] = React.useState(0);
     const [quantity, setQuantity] = React.useState(0);  
+    const classes = useStyles();
+
     return (  
       <Auth>
-    <Grid container spacing={3}>
+    <Grid container spacing={3} className={classes.bg}>
     <Grid item xs={12}>
       <h1>Add New Product</h1>
     </Grid>
@@ -57,6 +69,9 @@ const NewProduct = (props) => {
                   props.history.push("/products");         
             }).catch(err => {
                 console.log(err);
+                toast.error(err.response.data, {
+                  position: toast.POSITION.TOP_CENTER
+              });
             });
         }}
       >

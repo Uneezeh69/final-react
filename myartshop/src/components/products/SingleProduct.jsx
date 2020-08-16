@@ -19,6 +19,11 @@ h3:{
   fontSize: "30px",
   color:"black",
 },
+hr:{
+  
+  border :"5px solid orange",
+  
+},
 
 }));
 
@@ -69,7 +74,7 @@ const SingleProduct = (props) => {
       <span className={classes.h3} >Quantity Required:</span> &nbsp; 
        {product.quantity}
        </p>
-      <hr />
+      <hr className={classes.hr}/>
     </Grid>
   );
 };

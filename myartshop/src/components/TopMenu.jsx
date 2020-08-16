@@ -27,7 +27,13 @@ const useStyles = makeStyles((theme) => ({
     tool:{
         fontSize: "40px",
     },
-    
+    addBtn: {
+        marginTop: "50px",
+        marginLeft: "225px",
+        bottom: theme.spacing(2),
+        right: theme.spacing(2),
+        backgroundColor: "#fba73f",
+      },
   }));
 
 const TopMenu = () => {
@@ -71,7 +77,7 @@ const TopMenu = () => {
                 </> : 
                 <Button 
                 variant="contained"
-                color="secondary"
+                className= {classes.addBtn}
                 onClick = { (e) => {
                     userService.logout();
                     window.location.reload();

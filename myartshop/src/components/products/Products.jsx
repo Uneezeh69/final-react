@@ -22,7 +22,7 @@ const LightTooltip = withStyles((theme) => ({
 
 const useStyles = makeStyles((theme) => ({
   addBtn: {
-    position: "absolute",
+    position: "fixed",
     bottom: theme.spacing(2),
     right: theme.spacing(2),
     backgroundColor: "#fba73f",
