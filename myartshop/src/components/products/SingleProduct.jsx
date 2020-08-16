@@ -3,12 +3,14 @@ import { Grid,  Button } from "@material-ui/core";
 import productService from "../../services/ProductService";
 import { withRouter } from "react-router-dom";
 import userService from "../../services/UserService";
+import { makeStyles } from "@material-ui/core/styles";
+
 const SingleProduct = (props) => {
     const { product, onDelete, history} =props;
     console.log(props);
   return (
     <Grid item xs={4}>
-      <h2>{product.name}{""}
+      <p>{product.name}{""}
       {userService.isAdmin() && (
       <>
       <Button 
@@ -36,7 +38,7 @@ const SingleProduct = (props) => {
       > Delete</Button>
       </>
       )}
-       </h2>
+       </p>
       <p>{product.price}</p>
       <p>{product.quantity}</p>
       <hr />

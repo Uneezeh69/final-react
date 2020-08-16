@@ -53,15 +53,21 @@ const TopMenu = () => {
                     <Link to="/aboutus" className = {classes.linkP}><img src="https://img.icons8.com/ios/50/000000/about.png"/></Link>
                 </Typography>
                 </LightTooltip>
+
                 </Box>
                 {!userService.isLoggedIn()? <>
+                <LightTooltip title="Login">
                 <Typography variant="h6">
                     <Link to="/login" className = {classes.linkP}><img src="https://img.icons8.com/ios/50/000000/login-rounded-right.png"/></Link>
                 </Typography>
+                </LightTooltip>
 
+                <LightTooltip title="Sign Up">
                 <Typography variant="h6">
                     <Link to="/signup" className = {classes.linkP} ><img src="https://img.icons8.com/ios/50/000000/login-rounded-down.png"/></Link>
                 </Typography>
+                </LightTooltip>
+
                 </> : 
                 <Button 
                 variant="contained"

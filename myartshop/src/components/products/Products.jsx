@@ -9,13 +9,43 @@ import productService from "../../services/ProductService";
 import userService from "../../services/UserService";
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Tooltip from '@material-ui/core/Tooltip';
+import { withStyles } from '@material-ui/core/styles';
+
+const LightTooltip = withStyles((theme) => ({
+  tooltip: {
+    backgroundColor: theme.palette.warning.main,
+    color: 'rgba(0, 0, 0, 0.87)',
+    boxShadow: theme.shadows[1],
+    fontSize: 15,
+  },
+}))(Tooltip);
 
 const useStyles = makeStyles((theme) => ({
   addBtn: {
     position: "absolute",
     bottom: theme.spacing(2),
     right: theme.spacing(2),
+    backgroundColor: "#fba73f",
   },
+  bg:{
+    backgroundColor: "	#FFFF99",
+},
+h1:{
+  color : "#FC7C00",
+  fontFamily: "Pacifico , cursive",
+  textAlign: "center",
+  fontSize: "70px",
+},
+nop:{
+  fontFamily: "Pacifico , cursive",
+  textAlign: "center",
+  fontSize: "70px",
+},
+h3:{
+  fontFamily: "Pacifico , cursive",
+  textAlign: "center",
+  fontSize: "20px",
+},
 }));
 
 const Products = (props) => {
@@ -40,19 +70,20 @@ const Products = (props) => {
   //console.log("Inside Products Component");
   return (
     <div>
-      <h1>Products</h1>
+      <h1 className={classes.h1}>Products</h1>
+      <h3 className={classes.h3}>These Products have been requested by other users. Click below to add your custom item request.</h3>
       {userService.isLoggedIn() && 
-       <Tooltip title="Add" aria-label="add">
-      <Fab color="secondary"
+      <LightTooltip title="Add New To List">
+      <Fab
        aria-label="add" 
        className={classes.addBtn}
         onClick = {handleNewProductClick}>
-        <FavoriteIcon />
+      <img src="https://img.icons8.com/windows/32/000000/cute-skull.png"/>
       </Fab>
-      </Tooltip>
+      </LightTooltip>
       }
       {products.length == 0 ? (
-        <p>There are no products</p>
+        <p className={classes.nop}>There are no products</p>
       ) : (
         <Grid container spacing={3}>
           {products.map((product, index) => (
