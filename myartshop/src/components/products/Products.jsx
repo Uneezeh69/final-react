@@ -7,6 +7,9 @@ import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
 import productService from "../../services/ProductService";
 import userService from "../../services/UserService";
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import Tooltip from '@material-ui/core/Tooltip';
+
 const useStyles = makeStyles((theme) => ({
   addBtn: {
     position: "absolute",
@@ -39,12 +42,14 @@ const Products = (props) => {
     <div>
       <h1>Products</h1>
       {userService.isLoggedIn() && 
-      <Fab color="primary"
+       <Tooltip title="Add" aria-label="add">
+      <Fab color="secondary"
        aria-label="add" 
        className={classes.addBtn}
         onClick = {handleNewProductClick}>
-        <AddIcon />
+        <FavoriteIcon />
       </Fab>
+      </Tooltip>
       }
       {products.length == 0 ? (
         <p>There are no products</p>

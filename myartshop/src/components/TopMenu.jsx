@@ -1,9 +1,19 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import Button from '@material-ui/core/Button';
-import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Box, Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import userService from "../services/UserService";
+import { withStyles } from '@material-ui/core/styles';
+
+const LightTooltip = withStyles((theme) => ({
+    tooltip: {
+      backgroundColor: theme.palette.warning.main,
+      color: 'rgba(0, 0, 0, 0.87)',
+      boxShadow: theme.shadows[1],
+      fontSize: 15,
+    },
+  }))(Tooltip);
 
 const useStyles = makeStyles((theme) => ({
    linkH: {
@@ -14,7 +24,9 @@ const useStyles = makeStyles((theme) => ({
         color : "white",
         padding : "1rem",
       },
-    
+    tool:{
+        fontSize: "40px",
+    },
     
   }));
 
@@ -24,17 +36,23 @@ const TopMenu = () => {
         <AppBar style={{ background: '#FFFF66' }} position= "sticky">
             <Toolbar>
                 <Box display='flex' flexGrow={1}>
+                <LightTooltip title="Home">
                 <Typography variant="h5">
                     <Link to="/" className = {classes.linkH}><img src="https://img.icons8.com/ios/50/000000/home-page.png"/> </Link>
                 </Typography>
+                </LightTooltip>
 
+                <LightTooltip title="Products">
                 <Typography variant="h6">
                     <Link to="/products" className = {classes.linkP}><img src="https://img.icons8.com/wired/50/000000/product.png"/></Link>
                 </Typography>
+                </LightTooltip>
 
+                <LightTooltip title="About Us!">
                 <Typography variant="h6">
                     <Link to="/aboutus" className = {classes.linkP}><img src="https://img.icons8.com/ios/50/000000/about.png"/></Link>
                 </Typography>
+                </LightTooltip>
                 </Box>
                 {!userService.isLoggedIn()? <>
                 <Typography variant="h6">

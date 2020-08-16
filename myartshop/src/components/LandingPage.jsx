@@ -69,7 +69,7 @@ const LandingPage = () => {
             <Grid item xs={3}>
             <img src="https://cdn.dribbble.com/users/988145/screenshots/4053148/what-is-order-fulfillment.gif"  width= "500px" height = "400px"/>
             <br></br>
-            <h4 className={classes.h4}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <h4 className={classes.h4}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
             Get it delivered the next day!</h4>
             </Grid>
             <Grid item xs={2}></Grid>
